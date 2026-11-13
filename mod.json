@@ -1,11 +1,16 @@
 {
   "geode": "4.4.0",
+  "gd": {
+    "android": "2.208",
+    "ios": "2.208",
+    "win": "2.208"
+  },
   "version": "0.1.0",
   "id": "manus.geode-collab",
   "name": "Geode Collab",
   "developer": "Manus",
-  "description": "iOS-first real-time Geometry Dash editor collaboration prototype.",
-  "repository": "https://github.com/your-name/geode-collab",
+  "description": "Real-time Geometry Dash editor collaboration prototype.",
+  "repository": "https://github.com/gojo2500q-lgtm/Nu-uh",
   "tags": ["editor", "online", "collaboration"],
   "settings": {
     "server-url": {

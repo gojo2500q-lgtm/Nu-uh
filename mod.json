@@ -1,9 +1,9 @@
 {
   "geode": "5.11.2",
   "gd": {
-    "android": "2.208",
-    "ios": "2.208",
-    "win": "2.208"
+    "android": "2.2081",
+    "ios": "2.2081",
+    "win": "2.2081"
   },
   "version": "0.1.0",
   "id": "manus.geode-collab",

@@ -1,29 +1,29 @@
-name: Build Geode Collab for iOS
+name: Build Geode Collab for Android
 
 on:
   workflow_dispatch:
   push:
-    branches: ["main"]
+    branches: ["main", "released"]
 
 jobs:
-  build-ios:
-    name: iOS Geode build
-    runs-on: macos-latest
+  build-android:
+    name: Android64 Geode build
+    runs-on: ubuntu-latest
 
     steps:
       - name: Check out source
         uses: actions/checkout@v4
 
-      - name: Build iOS .geode package
+      - name: Build Android64 .geode package
         id: build
         uses: geode-sdk/build-geode-mod@main
         with:
-          target: iOS
+          target: Android64
           build-config: RelWithDebInfo
 
-      - name: Upload .geode artifact
+      - name: Upload Android64 .geode artifact
         uses: actions/upload-artifact@v4
         with:
-          name: geode-collab-ios
+          name: geode-collab-android64
           path: ${{ steps.build.outputs.build-output }}
           if-no-files-found: error

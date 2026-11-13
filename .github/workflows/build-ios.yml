@@ -1,0 +1,29 @@
+name: Build Geode Collab for iOS
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["main"]
+
+jobs:
+  build-ios:
+    name: iOS Geode build
+    runs-on: macos-latest
+
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Build iOS .geode package
+        id: build
+        uses: geode-sdk/build-geode-mod@main
+        with:
+          target: iOS
+          build-config: RelWithDebInfo
+
+      - name: Upload .geode artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: geode-collab-ios
+          path: ${{ steps.build.outputs.build-output }}
+          if-no-files-found: error
